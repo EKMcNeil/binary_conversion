@@ -8,10 +8,6 @@ if len(sys.argv) != 2:
     print("Incorrect Number of Arguments")
     sys.exit(1)
 
-import logging
-logging.basicConfig(filename="decimal.py", level=logging.debug)
-logging.debug("This should go into logs") #print("Debugging logs")
-
 decimal = sys.argv[1]
 #print("Decimal", list(decimal))
 
@@ -24,18 +20,21 @@ def test_range(decimal):
 max = 16
 
 for n in range(0, max-1):
-    if 2**n>decimal:
+    if 2 ** n > decimal:
        m = n-1 
        break
 
-if 2**n>decimal:
+if 2 ** n > decimal:
     print("1")
+else:
+    print("0")
+
+#alternately use divmod(decimal variable1/2 **n variable 2) to return the answer of division and the remainder... doesn't make it as easy toput the remainder in though
+if 2 ** m > decimal%2 ** n:
+    o = m-1
+    if true:
+      print("1")       
     else:
-       print("0")
-
-for n in range(0, max-1):
-    if 2**n>m:
-       o = n-1
-       break
-
+      print("0")
+    break
   
