@@ -18,15 +18,17 @@ for digit in list(binary):
         sys.exit(1)
 
 x=0
-result=0
+nybbles=[]
+first=0
 
 for digit in list(binary):
-    if digit == "1": 
-        result +=int(digit)*2**x
-        x+=1
-    
-print(result)
+    if x % 4 == 0:
+        if x != 0:
+            nybbles.append(binary[first:x])  
+        first = x
+    x += 1         
 
+if x <= len(binary):
+    nybbles.append(binary[first:])
 
-
-
+print(nybbles)
