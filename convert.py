@@ -20,13 +20,9 @@ for digit in list(binary):
 x=0
 result=0
 
-for digit in list(binary):
+for digit in reversed(list(binary)):
     if digit == "1": 
         result +=int(digit)*2**x
         x+=1
     
 print(result)
-
-
-
-

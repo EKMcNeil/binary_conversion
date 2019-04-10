@@ -34,28 +34,14 @@ if x <= len(binary):
 
 print(nybbles)
 
-for digit in list(binary):
-    if x == "1":
-      result += int(digit)*2**x 
-      x += 1
+x=0
+result=0
 
-for digit in list(binary):
-    if result == "9":
-      print(a)
-    else result == "10":
-      print(b)
-    else result == "11":
-      print(c)
-    else result == "12":
-      print(d)
-    else result == "13":
-      print(e)
-    else result == "14":
-      print(f)
-    else result == "15":
-      print(g)
-    else result == "16":
-      print(h)
-break
+for digit in reversed(list(binary)):
+    if digit == "1":
+      result += int(digit)*2**x
+    x +=1
 
-print(result) 
+print(result)
+
+
