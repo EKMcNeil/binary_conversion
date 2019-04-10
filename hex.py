@@ -44,4 +44,14 @@ for digit in reversed(list(binary)):
 
 print(result)
 
+a = 9
+hextuple = ("a", "b", "c", "d", "e", "f", "g", "h")
+ 
+for digit in list(result):
+    b = result % 16**int(digit)
+    if b >= a:
+        print((next(hextuple))) 
+    a += 1
+    digit += 1
 
+print(b)
