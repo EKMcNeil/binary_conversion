@@ -26,7 +26,7 @@ first=0
 result = 0
 
 for digit in (list(binary)):
-    print(digit)
+    #print(digit)
     if x % 4 == 0:
         if x != 0:
             nybbles.append(binary[first:x])  
@@ -37,8 +37,9 @@ for digit in (list(binary)):
 if x <= len(binary):
     t = binary[first:]
     r = len(binary) % 4
-    for i in range(4-r):
-        t += "0"        
+    if r > 0:
+        for i in range(4-r):
+            t += "0"        
     nybbles.append(t)
  
 print(nybbles)
