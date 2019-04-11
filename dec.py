@@ -34,16 +34,18 @@ for n in range(0, MAX):
 #print("m = " + str(m))
 
 r = int(decimal)
+binary = ""
+
 for i in reversed(range(0, m+1)):
     #print("i = " + str(i))
     t = r - 2**i
     #print("t = " + str(t))
 #setting temporary variable   
     if t >= 0:
-        r = t
-        print("1", end = "")
+        r = t 
+        binary += "1"
     else:
-        print("0", end = "")
+        binary += "0"
 
-print("")
+print(binary[::-1])
 

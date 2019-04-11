@@ -42,7 +42,7 @@ if x <= len(binary):
             t += "0"        
     nybbles.append(t)
  
-print(nybbles)
+#print(nybbles)
 
 hexnum = ""
 
