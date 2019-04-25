@@ -17,12 +17,16 @@ for digit in list(binary):
         print("Invalid Binary Number")
         sys.exit(1)
 
-x=0
-result=0
+x = 0
+result = 0
 
 for digit in reversed(list(binary)):
     if digit == "1": 
-        result +=int(digit)*2**x
-        x+=1
-    
+        result += int(digit) * 2**x 
+        #print(x, result)
+        x += 1
+    if digit == "0":
+        x +=1
+        #print(x, result)
+         
 print(result)
