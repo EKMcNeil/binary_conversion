@@ -20,7 +20,7 @@ for digit in list(binary):
 x = 0
 result = 0
 
-for digit in reversed(list(binary)):
+for digit in list(binary):
     if digit == "1": 
         result += int(digit) * 2**x 
         #print(x, result)
