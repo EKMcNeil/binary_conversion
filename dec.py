@@ -5,7 +5,7 @@ import sys
 #MAXimum number of bits converted 
 MAX = 16 
 
-def decimal_to_hex(decimal):
+def decimal_to_binary(decimal):
     for digit in list(decimal):
         #print("Got digit:" + digit)
         if not digit in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
@@ -52,7 +52,7 @@ if len(sys.argv) != 2:
 decimal = sys.argv[1]
 #print("Decimal", list(decimal))
 
-result = decimal_to_hex(decimal)
+result = decimal_to_binary(decimal)
 
 print(result)
 
