@@ -1,23 +1,22 @@
 #!/bin/env python3
 
 import sys
-                                                
-#MAXimum number of bits converted 
-MAX = 16 
-
-def decimal_to_binary(decimal):
+                                               
+#convert decimal to binary
+#max defines the maximum number of bits
+def decimal_to_binary(decimal, max = 16):
     for digit in list(decimal):
         #print("Got digit:" + digit)
         if not digit in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
             #print(decimal + " is not a valid decimal")
             sys.exit(1)
 
-    if int(decimal) > 2**MAX-1:
-        print(decimal + " is bigger than the maximum size " + str(2**MAX-1))
+    if int(decimal) > 2**max-1:
+        print(decimal + " is bigger than the maximum size " + str(2**max-1))
         sys.exit(1)
 
     m = 0
-    for n in range(0, MAX):
+    for n in range(0, max):
         if 2**n > int(decimal):
             m = n-1
             break
