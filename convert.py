@@ -3,7 +3,9 @@
 import sys
 
 #converts binary to decimal
-def binary_to_decimal(binary, result = 0, x = 0): 
+def binary_to_decimal(binary):
+    x = 0
+    result = 0 
     for digit in list(binary):
         if digit == "1": 
             result += int(digit) * 2**x 
@@ -14,6 +16,7 @@ def binary_to_decimal(binary, result = 0, x = 0):
             #print(x, result)
         
     return result
+    return x
 
 #print ("Number of arguments:", len(sys.argv), "arguments.")
 #print ("Argument List:", str(sys.argv))
@@ -31,6 +34,6 @@ for digit in list(binary):
         print("Invalid Binary Number")
         sys.exit(1)
 
-result = binary_to_decimal(binary,result = 0, x = 0)
+result = binary_to_decimal(binary)
 
 print(result)
