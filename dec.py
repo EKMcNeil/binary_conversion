@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 
 import sys
                                                
@@ -11,22 +11,25 @@ def decimal_to_binary(decimal, max = 16):
             #print(decimal + " is not a valid decimal")
             sys.exit(1)
 
-    if int(decimal) > 2**max-1:
+    if int(decimal) > (2**max) - 1:
         print(decimal + " is bigger than the maximum size " + str(2**max-1))
         sys.exit(1)
+ 
+    r = int(decimal)
+    if r == 0:
+        return "0"
 
     m = 0
-    for n in range(0, max):
+    for n in range(0, max + 1):
         if 2**n > int(decimal):
-            m = n-1
+            m = n
             break
  
     #print("m = " + str(m))
 
-    r = int(decimal)
     binary = ""
 
-    for i in reversed(range(0, m+1)):
+    for i in reversed(range(0, m)):
         #print("i = " + str(i))
         t = r - 2**i
         #print("t = " + str(t))
