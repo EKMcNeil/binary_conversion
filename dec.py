@@ -44,17 +44,20 @@ def decimal_to_binary(decimal, max = 16):
     
     return result
 
-#print ("Number of Arguments:", len(sys.argv), "arguments.")
-#print ("Argument List:", str(sys.argv))
+def main():
+	#print ("Number of Arguments:", len(sys.argv), "arguments.")
+	#print ("Argument List:", str(sys.argv))
 
-if len(sys.argv) != 2:
-    print("Incorrect Number of Arguments")
-    sys.exit(1)
+	if len(sys.argv) != 2:
+	    print("Incorrect Number of Arguments")
+	    sys.exit(1)
 
-decimal = sys.argv[1]
-#print("Decimal", list(decimal))
+	decimal = sys.argv[1]
+	#print("Decimal", list(decimal))
 
-result = decimal_to_binary(decimal)
+	result = decimal_to_binary(decimal)
 
-print(result)
+	print(result)
 
+if __name__ == '__main__':
+    main()

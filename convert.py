@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import sys
 
@@ -21,19 +21,23 @@ def binary_to_decimal(binary):
 #print ("Number of arguments:", len(sys.argv), "arguments.")
 #print ("Argument List:", str(sys.argv))
 
-if len(sys.argv) != 2:
-    print("Incorrect Number of Arguments")
-    sys.exit(1) 
+def main():
+    if len(sys.argv) != 2:
+        print("Incorrect Number of Arguments")
+        sys.exit(1) 
 
-binary = sys.argv[1]
-#print("Binary", list(binary))
+    binary = sys.argv[1]
+    #print("Binary", list(binary))
 
-#system checks for correct values input
-for digit in list(binary):
-    if digit != "0" and digit != "1":
-        print("Invalid Binary Number")
-        sys.exit(1)
+    #system checks for correct values input
+    for digit in list(binary):
+        if digit != "0" and digit != "1":
+            print("Invalid Binary Number")
+            sys.exit(1)
 
-result = binary_to_decimal(binary)
+    result = binary_to_decimal(binary)
 
-print(result)
+    print(result)
+
+if __name__ == '__main__':
+    main()
