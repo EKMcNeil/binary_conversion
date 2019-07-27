@@ -8,8 +8,7 @@ def decimal_to_binary(decimal, max = 16):
     for digit in list(decimal):
         #print("Got digit:" + digit)
         if not digit in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-            #print(decimal + " is not a valid decimal")
-            sys.exit(1)
+            raise ValueError(decimal + " is not a valid decimal")
 
     if int(decimal) > (2**max) - 1:
         print(decimal + " is bigger than the maximum size " + str(2**max-1))
@@ -45,19 +44,23 @@ def decimal_to_binary(decimal, max = 16):
     return result
 
 def main():
-	#print ("Number of Arguments:", len(sys.argv), "arguments.")
-	#print ("Argument List:", str(sys.argv))
+        #print ("Number of Arguments:", len(sys.argv), "arguments.")
+        #print ("Argument List:", str(sys.argv))
 
-	if len(sys.argv) != 2:
-	    print("Incorrect Number of Arguments")
-	    sys.exit(1)
+        if len(sys.argv) != 2:
+            print("Incorrect Number of Arguments")
+            sys.exit(1)
 
-	decimal = sys.argv[1]
-	#print("Decimal", list(decimal))
+        decimal = sys.argv[1]
+        #print("Decimal", list(decimal))
 
-	result = decimal_to_binary(decimal)
+        try:
+            result = decimal_to_binary(decimal)
+        except ValueError as e:
+            print(e)
+            sys.exit(1)
 
-	print(result)
+        print(result)
 
 if __name__ == '__main__':
     main()
