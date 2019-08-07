@@ -7,8 +7,16 @@ import sys
 
 #print("Binary", list(binary))
 
-def binary_to_hex(binary):
+class InvalidBinary(Exception):
+    pass
 
+class BinaryToHex:
+    def binary_to_hex(self, binary):
+        #system check for binary digits only
+        for digit in list(binary):
+            if digit != "0" and digit != "1":
+                raise InvalidBinary(binary)
+                
         #print(list(binary))
         x = 0
         nybbles = []
@@ -21,7 +29,7 @@ def binary_to_hex(binary):
                 if x != 1:
                     nybbles.append(binary[first:x])  
                 first = x
-                print(nybbles)
+                #print(nybbles)
 
         #division into nybbles
         if x <= len(binary):
@@ -32,7 +40,7 @@ def binary_to_hex(binary):
                     t += "0"        
                 nybbles.append(t)
          
-        print(nybbles)
+        #print(nybbles)
 
         hexnum = ""
 
@@ -83,14 +91,12 @@ def main():
 
         binary = sys.argv[1]
 
-        #system check for binary digits only
-        for digit in list(binary):
-            if digit != "0" and digit != "1":
-                print("Invalid Binary Number")
-                sys.exit(1)
-
-        result = binary_to_hex(binary)
-        print(result)
+        bintohex = BinaryToHex() 
+        try:
+            result = bintohex.binary_to_hex(binary)
+            print(result)
+        except InvalidBinary as e:
+            print("Invalid binary number " + str(e))
  
 if __name__ == '__main__':
     main()

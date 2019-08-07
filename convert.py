@@ -3,23 +3,20 @@
 import sys
 
 #converts binary to decimal
-def binary_to_decimal(binary):
-    x = 0
-    result = 0 
-    for digit in list(binary):
-        if digit == "1": 
-            result += int(digit) * 2**x 
-            #print(x, result)
-            x += 1
-        if digit == "0":
-            x +=1
-            #print(x, result)
-        
-    return result
-    return x
-
-#print ("Number of arguments:", len(sys.argv), "arguments.")
-#print ("Argument List:", str(sys.argv))
+class BinaryToDecimal:
+    def binary_to_decimal(self, binary):
+        x = 0
+        result = 0 
+        for digit in list(binary):
+            if digit == "1": 
+                result += int(digit) * 2**x 
+                #print(x, result)
+                x += 1
+            if digit == "0":
+                x +=1
+                #print(x, result)
+        #print(self)    
+        return result
 
 def main():
     if len(sys.argv) != 2:
@@ -35,9 +32,14 @@ def main():
             print("Invalid Binary Number")
             sys.exit(1)
 
-    result = binary_to_decimal(binary)
+    btod = BinaryToDecimal()
+    #print(btod)
+    result = btod.binary_to_decimal(binary)
 
     print(result)
+
+#print ("Number of arguments:", len(sys.argv), "arguments.")
+#print ("Argument List:", str(sys.argv))
 
 if __name__ == '__main__':
     main()
